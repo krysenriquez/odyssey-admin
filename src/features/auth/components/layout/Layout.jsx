@@ -17,16 +17,16 @@ export const Layout = () => {
       }}
     >
       <div className='d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20'>
-        <div className='mb-12'>
+        <div className='mb-8'>
           <img
             alt='Logo'
-            src={toAbsoluteUrl('/public/media/logos/binary-admin-dark.svg')}
-            className='theme-dark-show h-100px'
+            src={toAbsoluteUrl('/public/media/logos/tci.png')}
+            className='theme-dark-show h-300px'
           />
           <img
             alt='Logo'
-            src={toAbsoluteUrl('/public/media/logos/binary-admin.svg')}
-            className='theme-light-show h-100px'
+            src={toAbsoluteUrl('/public/media/logos/tci.png')}
+            className='theme-light-show h-300px'
           ></img>
         </div>
         <div className='w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto'>

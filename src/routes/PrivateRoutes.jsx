@@ -8,6 +8,7 @@ const PrivateRoutes = () => {
   // const Dashboard = lazy(() => import('@/features/dashboard/routes'))
   const Members = lazy(() => import('@/features/members/routes'))
   const Packages = lazy(() => import('@/features/packages/routes'))
+  const Codes = lazy(() => import('@/features/codes/routes'))
 
   const routes = useRoutes([
     {
@@ -29,6 +30,14 @@ const PrivateRoutes = () => {
           element: (
             <SuspensedView>
               <Packages />
+            </SuspensedView>
+          ),
+        },
+        {
+          path: 'codes/*',
+          element: (
+            <SuspensedView>
+              <Codes />
             </SuspensedView>
           ),
         },

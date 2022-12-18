@@ -1,3 +1,4 @@
+import {toCurrency} from '@/utils/toCurrency'
 import clsx from 'clsx'
 
 export const membersColumns = [
@@ -15,7 +16,7 @@ export const membersColumns = [
   },
   {
     header: 'Package',
-    accessorFn: (row) => row.account_package + '- ₱' + row.account_package_amount,
+    accessorFn: (row) => row.account_package + ' - ' + toCurrency(row.account_package_amount),
     id: 'account_package',
     cell: (info) => info.getValue(),
   },
@@ -39,6 +40,22 @@ export const membersColumns = [
   },
   {
     header: 'Active',
+    accessorFn: (row) => row.account_status,
+    id: 'account_status',
+    cell: (info) => (
+      <div
+        className={clsx('badge fw-bolder', {
+          'badge-light-success': info.getValue() == 'ACTIVE',
+          'badge-light-warning': info.getValue() == 'PENDING',
+          'badge-light-danger': info.getValue() == 'DEACTIVATED',
+        })}
+      >
+        {info.getValue()}
+      </div>
+    ),
+  },
+  {
+    header: 'Actions',
     accessorFn: (row) => row.account_status,
     id: 'account_status',
     cell: (info) => (

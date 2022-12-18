@@ -76,12 +76,19 @@ export function AsideMenuMain() {
         className='py-2'
       />
       <AsideMenuItem
+        to='/codes'
+        title={intl.formatMessage({id: 'CODES'})}
+        fontIcon='bi-upc fs-2'
+        bsTitle={intl.formatMessage({id: 'CODES'})}
+        className='py-2'
+      />
+      {/* <AsideMenuItem
         to='/products'
         title={intl.formatMessage({id: 'PRODUCTS'})}
         fontIcon='bi-cart2 fs-2'
         bsTitle={intl.formatMessage({id: 'PRODUCTS'})}
         className='py-2'
-      />
+      /> */}
       <AsideMenuItem
         to='/settings'
         title={intl.formatMessage({id: 'SETTINGS'})}

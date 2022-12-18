@@ -6,10 +6,11 @@ import {I18nProvider} from '@/providers/i18n/i18nProvider'
 import {LayoutProvider} from '@/providers/layout/LayoutProvider'
 import {LayoutSplashScreen} from '@/providers/SplashScreen'
 import {MasterInit} from '@/components/ui/MasterInit'
+import {EnumsListQueryProvider} from '@/providers/EnumsListProvider'
 // import {ErrorsPage} from 'features/errors/ErrorsPage'
 import PublicRoutes from './PublicRoutes'
 import PrivateRoutes from './PrivateRoutes'
-
+import {ToastContainer} from 'react-toastify'
 const {PUBLIC_URL} = import.meta.env
 
 const App = () => {
@@ -18,7 +19,10 @@ const App = () => {
       <I18nProvider>
         <LayoutProvider>
           <AuthInit>
-            <Outlet />
+            <EnumsListQueryProvider>
+              <Outlet />
+            </EnumsListQueryProvider>
+            <ToastContainer />
             <MasterInit />
           </AuthInit>
         </LayoutProvider>
