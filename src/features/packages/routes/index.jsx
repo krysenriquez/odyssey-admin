@@ -1,7 +1,7 @@
 import {Route, Routes, Outlet} from 'react-router-dom'
 import {useIntl} from 'react-intl'
 import {PageTitle} from '@/providers/PageDataProvider'
-import {PackagesListWrapper} from '../components/PackagesList/PackagesListWrapper'
+import {PackagesList} from './PackagesList'
 
 const PackagesRoutes = () => {
   const intl = useIntl()
@@ -30,7 +30,7 @@ const PackagesRoutes = () => {
             <PageTitle breadcrumbs={packageBreadCrumbs} description=''>
               {intl.formatMessage({id: 'PACKAGES'})}
             </PageTitle>
-            <PackagesListWrapper />
+            <PackagesList />
           </>
         }
       />

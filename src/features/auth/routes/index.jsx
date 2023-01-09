@@ -1,12 +1,12 @@
 import {Route, Routes, Navigate} from 'react-router-dom'
-import {Layout} from '../components/layout/Layout'
+import {AuthLayout} from '../components/AuthLayout'
 import {LoginForm} from '../components/LoginForm'
 import {ForgotPasswordForm} from '../components/ForgotPasswordForm'
 
 const AuthRoutes = () => {
   return (
     <Routes>
-      <Route element={<Layout />}>
+      <Route element={<AuthLayout />}>
         <Route path='/' element={<LoginForm />} />
         <Route path='forgot-password' element={<ForgotPasswordForm />} />
         <Route index element={<LoginForm />} />

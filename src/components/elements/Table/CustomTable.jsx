@@ -12,13 +12,9 @@ import {DebouncedInput} from '../Input/DebouncedInput'
 import {CustomSVG} from '../SVG/CustomSVG'
 import {CustomCardBody} from '../Card'
 
-export function CustomTable({
-  data,
-  columns,
-  handleClick,
-  toolbarButtonName,
-  handletoolbarButtonClick,
-}) {
+export function CustomTable(props) {
+  const {data, columns, handleClick, hasToolbar, toolbarButtonName, handletoolbarButtonClick} =
+    props
   const [globalFilter, setGlobalFilter] = useState('')
 
   const table = useReactTable({
@@ -52,13 +48,17 @@ export function CustomTable({
           </div>
         </h3>
         <div className='card-toolbar gap-5'>
-          <button
-            type='button'
-            className='btn btn-light-primary'
-            onClick={handletoolbarButtonClick}
-          >
-            {toolbarButtonName}
-          </button>
+          {hasToolbar ? (
+            <button
+              type='button'
+              className='btn btn-light-primary'
+              onClick={handletoolbarButtonClick}
+            >
+              {toolbarButtonName}
+            </button>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
       <CustomCardBody className='py-4'>

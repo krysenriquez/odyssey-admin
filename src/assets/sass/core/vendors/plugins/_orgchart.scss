@@ -1,0 +1,124 @@
+#binary-tree {
+  font-family: 'Readex Pro', sans-serif !important;
+}
+
+.boc-light {
+  background-color: transparent !important;
+}
+
+.edit-form-title {
+  font-family: 'Readex Pro', sans-serif !important;
+  font-size: 20px !important;
+}
+.ba-input {
+  > label {
+    font-family: 'Readex Pro', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+  }
+  > input {
+    font-family: 'Readex Pro', sans-serif !important;
+  }
+}
+.edit-form-avatar {
+  > svg {
+    height: 140px !important;
+    width: 140px !important;
+  }
+}
+.edit-form-header {
+  background-color: transparent !important;
+}
+.edit-form-instruments {
+  min-height: 20px !important;
+}
+[data-n-id] {
+  rect {
+    fill: transparent;
+    &:hover {
+      filter: drop-shadow(2px 2px 2px transparent);
+    }
+  }
+  circle {
+    stroke: transparent;
+  }
+  cursor: pointer;
+}
+[data-n-id] {
+  text {
+    font-size: 1.5rem !important;
+    transform: translate(0rem, 0px);
+  }
+}
+
+.node.addMember {
+  rect {
+    fill: transparent;
+    &:hover {
+      filter: drop-shadow(2px 2px 2px transparent);
+    }
+  }
+  circle {
+    stroke: transparent;
+  }
+}
+.node.blankMember {
+  cursor: not-allowed;
+}
+
+.bg-platinum {
+  background-color: $package-platinum !important;
+}
+.bg-gold {
+  background-color: $package-gold !important;
+}
+.bg-silver {
+  background-color: $package-silver !important;
+}
+.bg-starter {
+  background-color: $package-starter !important;
+}
+
+.node.Platinum {
+  circle {
+    stroke: $package-platinum;
+    stroke-width: 10px;
+  }
+}
+
+.node.Gold {
+  circle {
+    stroke: $package-gold;
+    stroke-width: 10px;
+  }
+}
+
+.node.Silver {
+  circle {
+    stroke: $package-silver;
+    stroke-width: 10px;
+  }
+}
+
+.node.Starter {
+  circle {
+    stroke: $package-starter;
+    stroke-width: 10px;
+  }
+}
+
+[data-theme='light'] {
+  [data-n-id] {
+    text {
+      color: var(--kt-text-dark);
+    }
+  }
+}
+
+[data-theme='dark'] {
+  [data-n-id] {
+    text {
+      color: var(--kt-text-dark);
+    }
+  }
+}

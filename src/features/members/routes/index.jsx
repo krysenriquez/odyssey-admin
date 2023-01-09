@@ -1,8 +1,9 @@
 import {Route, Routes, Outlet} from 'react-router-dom'
 import {useIntl} from 'react-intl'
 import {PageTitle} from '@/providers/PageDataProvider'
-import {MembersListWrapper} from '../components/MembersList/MembersListWrapper'
-import {MemberInfoWrapper} from '../components/MemberInfo/MemberInfoWrapper'
+import {MembersList} from './MembersList'
+import {MemberInfo} from './MemberInfo'
+// import {MemberInfoWrapper} from '../components/MemberInfo/MemberInfoWrapper'
 
 const MembersRoutes = () => {
   const intl = useIntl()
@@ -31,18 +32,18 @@ const MembersRoutes = () => {
             <PageTitle breadcrumbs={membersBreadCrumbs} description=''>
               {intl.formatMessage({id: 'MEMBERS'})}
             </PageTitle>
-            <MembersListWrapper />
+            <MembersList />
           </>
         }
       />
       <Route
-        path=':account_id'
+        path=':accountId'
         element={
           <>
             <PageTitle breadcrumbs={membersBreadCrumbs} description=''>
               {intl.formatMessage({id: 'MEMBERS.INFO'})}
             </PageTitle>
-            <MemberInfoWrapper />
+            <MemberInfo />
           </>
         }
       />

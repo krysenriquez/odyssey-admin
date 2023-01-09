@@ -3,6 +3,9 @@
 //
 
 // Import Dependencies
+@import '~/react-toastify/scss/main';
+@import '~/sweetalert2/src/sweetalert2';
+@import 'orgchart';
 @import 'root';
 @import 'prismjs';
 @import 'fslightbox';
@@ -30,4 +33,3 @@
 @import 'jkanban';
 @import 'jstree';
 @import 'vis-timeline';
-@import '~/react-toastify/scss/main';

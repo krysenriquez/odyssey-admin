@@ -1,10 +1,12 @@
 import {useEffect, useState} from 'react'
 
-export function DebouncedInput({value: initialValue, onChange, debounce = 500, ...props}) {
+export function DebouncedInput({value: initialValue, onChange, debounce = 3000, ...props}) {
   const [value, setValue] = useState(initialValue)
+
   useEffect(() => {
     setValue(initialValue)
   }, [initialValue])
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       onChange(value)

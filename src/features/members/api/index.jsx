@@ -12,47 +12,38 @@ export const CREATE_MEMBER_URL = `${ACCOUNTS_URL}/create/`
 export const GET_MEMBERS_URL = `${ACCOUNTS_URL}/getmembers`
 export const GET_MEMBER_INFO_URL = `${ACCOUNTS_URL}/getprofile`
 
-export const GET_PV_MEMBER_WALLET_URL = `${CORE_URL}/getpvwalletsummary/`
-export const GET_MEMBER_WALLET_SUMMARY_URL = `${CORE_URL}/getmemberwalletsummary/`
+export const GET_TOP_EARNERS_URL = `${ACCOUNTS_URL}/gettopearners`
+export const UPDATE_ACCOUNT_STATUS_URL = `${ACCOUNTS_URL}/updateuserstatus/`
 
-export const GET_ACTIVITY_TOTAL_AMOUNT_URL = `${CORE_URL}/getactivitytotalamount/`
-
-const updateMember = (user) => {
-  return axios.post(`${ACCOUNTS_URL}/${user.id}`, user).then((response) => response.data)
-}
-
-const getMembers = () => {
-  return axios.get(`${GET_MEMBERS_URL}`).then((d) => d.data)
-}
-
-const getUserMember = (account_id) => {
+export const updateMemberStatus = (values) => {
   return axios
-    .get(`${GET_MEMBER_INFO_URL}`, {params: {account_id: account_id}})
-    .then((response) => humps.decamelizeKeys(response.data))
+    .post(`${UPDATE_ACCOUNT_STATUS_URL}`, humps.decamelizeKeys(values))
+    .then((d) => humps.camelizeKeys(d.data))
 }
 
-const createMember = (member) => {
+export const getMembers = () => {
+  return axios.get(`${GET_MEMBERS_URL}`).then((d) => humps.camelizeKeys(d.data))
+}
+
+export const getUserMember = (accountId) => {
+  console.log(accountId)
+  return axios
+    .get(`${GET_MEMBER_INFO_URL}`, {params: {account_id: accountId}})
+    .then((response) => humps.camelizeKeys(response.data[0]))
+}
+
+export const createMember = (member) => {
   return axios.post(`${CREATE_MEMBER_URL}`, humps.decamelizeKeys(member))
 }
 
-const verifyCode = (value) => {
+export const verifyCode = (value) => {
   return axios.post(`${VERIFY_CODE_URL}`, {activation_code: value})
 }
 
-const verifyAccountNumber = (value) => {
+export const verifyAccountNumber = (value) => {
   return axios.post(`${VERIFY_ACCOUNT_NUMBER_URL}`, {account_id: value})
 }
 
-export const getPointValuesMemberWalletSummary = (account_id) => {
-  return axios.post(`${GET_PV_MEMBER_WALLET_URL}`, {account_id: account_id})
+export const getTopEarners = () => {
+  return axios.get(`${GET_TOP_EARNERS_URL}`).then((d) => humps.camelizeKeys(d.data))
 }
-
-export const getMemberWalletSummary = (account_id) => {
-  return axios.post(`${GET_MEMBER_WALLET_SUMMARY_URL}`, {account_id: account_id})
-}
-
-export const getActivityTotalSummary = (account_id) => {
-  return axios.post(`${GET_ACTIVITY_TOTAL_AMOUNT_URL}`, {account_id: account_id})
-}
-
-export {getMembers, getUserMember, createMember, updateMember, verifyCode, verifyAccountNumber}
