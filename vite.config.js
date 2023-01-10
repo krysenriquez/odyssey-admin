@@ -6,9 +6,9 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3001,
-    open: '/',
+    open: '',
     base: 'http://127.0.0.1:8080',
-    origin: '/',
+    origin: '',
   },
   resolve: {
     alias: {
