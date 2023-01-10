@@ -19,11 +19,9 @@ const App = () => {
       <I18nProvider>
         <LayoutProvider>
           <AuthInit>
-            <PermissionsProvider>
-              <Outlet />
-              <ToastContainer />
-              <MasterInit />
-            </PermissionsProvider>
+            <Outlet />
+            <ToastContainer />
+            <MasterInit />
           </AuthInit>
         </LayoutProvider>
       </I18nProvider>
@@ -41,7 +39,14 @@ export const AppRoutes = () => {
           <Route path='logout' element={<Logout />} />
           {auth ? (
             <>
-              <Route path='/*' element={<PrivateRoutes />} />
+              <Route
+                path='/*'
+                element={
+                  <PermissionsProvider>
+                    <PrivateRoutes />
+                  </PermissionsProvider>
+                }
+              />
             </>
           ) : (
             <>
