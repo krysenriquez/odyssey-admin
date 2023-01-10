@@ -17,7 +17,7 @@ const GenealogyPage = () => {
   const genealogy = useMemo(() => response, [response])
   const [tree, setTree] = useState([])
 
-  const defaultAvatar = toAbsoluteUrl('/public/media/avatars/blank.png')
+  const defaultAvatar = toAbsoluteUrl('/media/avatars/blank.png')
   var jsonTree = []
 
   const fourthGenJSON = (object) => {

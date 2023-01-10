@@ -18,9 +18,9 @@ const Topbar = () => {
       <div className={clsx('d-flex align-items-center', itemClass)}>
         <div
           className={clsx(btnClass, 'position-relative')}
-          data-kt-menu-trigger='click'
-          data-kt-menu-attach='parent'
-          data-kt-menu-placement='bottom-end'
+          data-menu-trigger='click'
+          data-menu-attach='parent'
+          data-menu-placement='bottom-end'
         >
           <i className='bi bi-bell fs-2' />
         </div>
@@ -38,11 +38,11 @@ const Topbar = () => {
         {/* begin::Toggle */}
         <div
           className={clsx('cursor-pointer symbol', userAvatarClass)}
-          data-kt-menu-trigger='click'
-          data-kt-menu-attach='parent'
-          data-kt-menu-placement='bottom-end'
+          data-menu-trigger='click'
+          data-menu-attach='parent'
+          data-menu-placement='bottom-end'
         >
-          <img src={toAbsoluteUrl('/public/media/avatars/blank.png')} alt='metronic' />
+          <img src={toAbsoluteUrl('/media/avatars/blank.png')} alt='metronic' />
         </div>
         <HeaderUserMenu />
         {/* end::Toggle */}

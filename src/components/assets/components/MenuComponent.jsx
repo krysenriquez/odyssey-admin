@@ -33,7 +33,7 @@ class MenuComponent {
     this.element = _element
     this.options = Object.assign(defaultMenuOptions, options)
     this.instanceUid = getUniqueIdWithPrefix('menu')
-    // this.element.setAttribute('data-kt-menu', 'true')
+    // this.element.setAttribute('data-menu', 'true')
     this._setTriggerElement()
     this._update()
     DataUtil.set(this.element, 'menu', this)
@@ -42,19 +42,17 @@ class MenuComponent {
 
   // Set external trigger element
   _setTriggerElement = () => {
-    const target = document.querySelector(
-      `[data-kt-menu-target="#${this.element.getAttribute('id')}"`
-    )
+    const target = document.querySelector(`[data-menu-target="#${this.element.getAttribute('id')}"`)
 
     if (target) {
       this.triggerElement = target
-    } else if (this.element.closest('[data-kt-menu-trigger]')) {
-      this.triggerElement = this.element.closest('[data-kt-menu-trigger]')
+    } else if (this.element.closest('[data-menu-trigger]')) {
+      this.triggerElement = this.element.closest('[data-menu-trigger]')
     } else if (
       this.element.parentNode &&
-      getElementChild(this.element.parentNode, '[data-kt-menu-trigger]')
+      getElementChild(this.element.parentNode, '[data-menu-trigger]')
     ) {
-      const child = getElementChild(this.element.parentNode, '[data-kt-menu-trigger]')
+      const child = getElementChild(this.element.parentNode, '[data-menu-trigger]')
       if (child) {
         this.triggerElement = child
       }
@@ -73,8 +71,8 @@ class MenuComponent {
   // Get item option(through html attributes)
   _getItemOption = (item, name) => {
     let value = null
-    if (item && item.hasAttribute('data-kt-menu-' + name)) {
-      const attr = item.getAttribute('data-kt-menu-' + name) || ''
+    if (item && item.hasAttribute('data-menu-' + name)) {
+      const attr = item.getAttribute('data-menu-' + name) || ''
       value = getAttributeValueByBreakpoint(attr)
       if (value !== null && String(value) === 'true') {
         value = true
@@ -93,7 +91,7 @@ class MenuComponent {
     }
 
     // Element has item toggler attribute
-    if (_element.hasAttribute('data-kt-menu-trigger')) {
+    if (_element.hasAttribute('data-menu-trigger')) {
       return _element
     }
 
@@ -104,7 +102,7 @@ class MenuComponent {
     }
 
     // Item is parent of element
-    const item = _element.closest('.menu-item[data-kt-menu-trigger]')
+    const item = _element.closest('.menu-item[data-menu-trigger]')
     if (item) {
       return item
     }
@@ -131,7 +129,7 @@ class MenuComponent {
       return subItem
     }
 
-    const parentItem = sub.closest('.menu-item[data-kt-menu-trigger]')
+    const parentItem = sub.closest('.menu-item[data-menu-trigger]')
     if (sub && parentItem) {
       return parentItem
     }
@@ -218,8 +216,8 @@ class MenuComponent {
     }
 
     if (selector) {
-      //element = selector.querySelector('.show.menu-item[data-kt-menu-trigger]');
-      const element = selector.querySelector('.menu-item[data-kt-menu-trigger]')
+      //element = selector.querySelector('.show.menu-item[data-menu-trigger]');
+      const element = selector.querySelector('.menu-item[data-menu-trigger]')
       if (element) {
         return element
       }
@@ -324,7 +322,7 @@ class MenuComponent {
 
   // Test if item has sub
   _hasItemSub = (item) => {
-    return item.classList.contains('menu-item') && item.hasAttribute('data-kt-menu-trigger')
+    return item.classList.contains('menu-item') && item.hasAttribute('data-menu-trigger')
   }
 
   // Get link element
@@ -526,7 +524,7 @@ class MenuComponent {
 
   // Hide all shown accordions of item
   _hideAccordions = (item) => {
-    const itemsToHide = this.element.querySelectorAll('.show[data-kt-menu-trigger]')
+    const itemsToHide = this.element.querySelectorAll('.show[data-menu-trigger]')
     if (itemsToHide && itemsToHide.length > 0) {
       for (var i = 0, len = itemsToHide.length; i < len; i++) {
         const itemToHide = itemsToHide[i]
@@ -569,7 +567,7 @@ class MenuComponent {
 
   // Update all item state classes if item sub type changed
   _update = () => {
-    const items = this.element.querySelectorAll('.menu-item[data-kt-menu-trigger]')
+    const items = this.element.querySelectorAll('.menu-item[data-menu-trigger]')
     items.forEach((el) => this._reset(el))
   }
 
@@ -855,7 +853,7 @@ class MenuComponent {
 
   // Hide all dropdowns and skip one if provided
   static hideDropdowns = (skip) => {
-    const items = document.querySelectorAll('.show.menu-dropdown[data-kt-menu-trigger]')
+    const items = document.querySelectorAll('.show.menu-dropdown[data-menu-trigger]')
 
     if (items && items.length > 0) {
       for (let i = 0, len = items.length; i < len; i++) {
@@ -881,7 +879,7 @@ class MenuComponent {
   }
 
   static updateDropdowns = () => {
-    const items = document.querySelectorAll('.show.menu-dropdown[data-kt-menu-trigger]')
+    const items = document.querySelectorAll('.show.menu-dropdown[data-menu-trigger]')
     if (items && items.length > 0) {
       for (var i = 0, len = items.length; i < len; i++) {
         var item = items[i]
@@ -909,7 +907,7 @@ class MenuComponent {
   static initGlobalHandlers = () => {
     // Dropdown handler
     document.addEventListener('click', (e) => {
-      const menuItems = document.querySelectorAll('.show.menu-dropdown[data-kt-menu-trigger]')
+      const menuItems = document.querySelectorAll('.show.menu-dropdown[data-menu-trigger]')
       if (menuItems && menuItems.length > 0) {
         for (let i = 0; i < menuItems.length; i++) {
           const item = menuItems[i]
@@ -934,7 +932,7 @@ class MenuComponent {
     // Sub toggle handler
     DOMEventHandlerUtil.on(
       document.body,
-      '.menu-item[data-kt-menu-trigger] > .menu-link, [data-kt-menu-trigger]:not(.menu-item):not([data-kt-menu-trigger="auto"])',
+      '.menu-item[data-menu-trigger] > .menu-link, [data-menu-trigger]:not(.menu-item):not([data-menu-trigger="auto"])',
       'click',
       function (e) {
         const menu = MenuComponent.getInstance(this)
@@ -947,7 +945,7 @@ class MenuComponent {
     // // Link handler
     DOMEventHandlerUtil.on(
       document.body,
-      '.menu-item:not([data-kt-menu-trigger]) > .menu-link',
+      '.menu-item:not([data-menu-trigger]) > .menu-link',
       'click',
       function (e) {
         e.stopPropagation()
@@ -959,7 +957,7 @@ class MenuComponent {
     )
 
     // Dismiss handler
-    DOMEventHandlerUtil.on(document.body, '[data-kt-menu-dismiss="true"]', 'click', function (e) {
+    DOMEventHandlerUtil.on(document.body, '[data-menu-dismiss="true"]', 'click', function (e) {
       const menu = MenuComponent.getInstance(this)
       if (menu) {
         return menu.dismiss(this, e)
@@ -969,7 +967,7 @@ class MenuComponent {
     // Mouseover handler
     DOMEventHandlerUtil.on(
       document.body,
-      '[data-kt-menu-trigger], .menu-sub',
+      '[data-menu-trigger], .menu-sub',
       'mouseover',
       function (e) {
         const menu = MenuComponent.getInstance(this)
@@ -982,7 +980,7 @@ class MenuComponent {
     // Mouseout handler
     DOMEventHandlerUtil.on(
       document.body,
-      '[data-kt-menu-trigger], .menu-sub',
+      '[data-menu-trigger], .menu-sub',
       'mouseout',
       function (e) {
         const menu = MenuComponent.getInstance(this)
@@ -999,7 +997,7 @@ class MenuComponent {
         timer,
         () => {
           // Locate and update Drawer instances on window resize
-          const elements = document.querySelectorAll('[data-kt-menu="true"]')
+          const elements = document.querySelectorAll('[data-menu="true"]')
           elements.forEach((el) => {
             const menu = MenuComponent.getInstance(el)
             if (menu) {
@@ -1014,11 +1012,11 @@ class MenuComponent {
 
   static bootstrap = () => {
     MenuComponent.initGlobalHandlers()
-    MenuComponent.createInstances('[data-kt-menu="true"]')
+    MenuComponent.createInstances('[data-menu="true"]')
   }
 
   static reinitialization = () => {
-    MenuComponent.createInstances('[data-kt-menu="true"]')
+    MenuComponent.createInstances('[data-menu="true"]')
   }
 
   static createInsance = (selector, options = defaultMenuOptions) => {

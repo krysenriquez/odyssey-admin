@@ -1,7 +1,7 @@
 import {useMemo} from 'react'
 import {DebouncedInput} from './DebouncedInput'
 
-export function Filter({column, table}) {
+export function FilterInput({column, table}) {
   const firstValue = table.getPreFilteredRowModel().flatRows[0]?.getValue(column.id)
 
   const columnFilterValue = column.getFilterValue()

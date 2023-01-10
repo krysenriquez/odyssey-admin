@@ -2,7 +2,7 @@ const Dropdown3 = () => {
   return (
     <div
       className='menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3'
-      data-kt-menu='true'
+      data-menu='true'
     >
       <div className='menu-item px-3'>
         <div className='menu-content text-muted pb-2 px-3 fs-7 text-uppercase'>Payments</div>
@@ -33,9 +33,9 @@ const Dropdown3 = () => {
 
       <div
         className='menu-item px-3'
-        data-kt-menu-trigger='hover'
-        data-kt-menu-placement='left-start'
-        data-kt-menu-flip='center, top'
+        data-menu-trigger='hover'
+        data-menu-placement='left-start'
+        data-menu-flip='center, top'
       >
         <a href='#' className='menu-link px-3'>
           <span className='menu-title'>Subscription</span>

@@ -79,7 +79,7 @@ export const ActivitySummaryTotal = () => {
                         }}
                       >
                         <CustomSVG
-                          path='/public/media/icons/arrows/right-arrow.svg'
+                          path='/media/icons/arrows/right-arrow.svg'
                           className='svg-icon svg-icon-2 svg-icon-primary'
                         />
                       </button>

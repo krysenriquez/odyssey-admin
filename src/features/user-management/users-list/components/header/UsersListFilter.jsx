@@ -37,15 +37,15 @@ const UsersListFilter = () => {
         disabled={isLoading}
         type='button'
         className='btn btn-light-primary me-3'
-        data-kt-menu-trigger='click'
-        data-kt-menu-placement='bottom-end'
+        data-menu-trigger='click'
+        data-menu-placement='bottom-end'
       >
         <KTSVG path='/media/icons/duotune/general/gen031.svg' className='svg-icon-2' />
         Filter
       </button>
       {/* end::Filter Button */}
       {/* begin::SubMenu */}
-      <div className='menu menu-sub menu-sub-dropdown w-300px w-md-325px' data-kt-menu='true'>
+      <div className='menu menu-sub menu-sub-dropdown w-300px w-md-325px' data-menu='true'>
         {/* begin::Header */}
         <div className='px-7 py-5'>
           <div className='fs-5 text-dark fw-bolder'>Filter Options</div>
@@ -110,7 +110,7 @@ const UsersListFilter = () => {
               disabled={isLoading}
               onClick={filterData}
               className='btn btn-light btn-active-light-primary fw-bold me-2 px-6'
-              data-kt-menu-dismiss='true'
+              data-menu-dismiss='true'
               data-kt-user-table-filter='reset'
             >
               Reset
@@ -120,7 +120,7 @@ const UsersListFilter = () => {
               type='button'
               onClick={resetData}
               className='btn btn-primary fw-bold px-6'
-              data-kt-menu-dismiss='true'
+              data-menu-dismiss='true'
               data-kt-user-table-filter='filter'
             >
               Apply

@@ -8,12 +8,12 @@ export const AuthLayout = () => {
         <div className='mb-8'>
           <img
             alt='Logo'
-            src={toAbsoluteUrl('/public/media/logos/tci.png')}
+            src={toAbsoluteUrl('/media/logos/tci.png')}
             className='theme-dark-show h-300px'
           />
           <img
             alt='Logo'
-            src={toAbsoluteUrl('/public/media/logos/tci.png')}
+            src={toAbsoluteUrl('/media/logos/tci.png')}
             className='theme-light-show h-300px'
           ></img>
         </div>

@@ -1,6 +1,6 @@
 export function Dropdown1() {
   return (
-    <div className='menu menu-sub menu-sub-dropdown w-250px w-md-300px' data-kt-menu='true'>
+    <div className='menu menu-sub menu-sub-dropdown w-250px w-md-300px' data-menu='true'>
       <div className='px-7 py-5'>
         <div className='fs-5 text-dark fw-bolder'>Filter Options</div>
       </div>
@@ -63,12 +63,12 @@ export function Dropdown1() {
           <button
             type='reset'
             className='btn btn-sm btn-secondary btn-active-light-primary me-2'
-            data-kt-menu-dismiss='true'
+            data-menu-dismiss='true'
           >
             Reset
           </button>
 
-          <button type='submit' className='btn btn-sm btn-primary' data-kt-menu-dismiss='true'>
+          <button type='submit' className='btn btn-sm btn-primary' data-menu-dismiss='true'>
             Apply
           </button>
         </div>

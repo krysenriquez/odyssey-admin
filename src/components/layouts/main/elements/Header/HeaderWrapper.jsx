@@ -30,7 +30,7 @@ export function HeaderWrapper() {
             className='btn btn-icon btn-active-color-primary w-30px h-30px w-md-40px h-md-40px'
             id='kt_aside_mobile_toggle'
           >
-            <CustomSVG path='/public/media/icons/hamburger.svg' className='svg-icon-1' />
+            <CustomSVG path='/media/icons/hamburger.svg' className='svg-icon-1' />
           </div>
         </div>
         {/* end::Aside mobile toggle */}
@@ -38,11 +38,7 @@ export function HeaderWrapper() {
         {/* begin::Mobile logo */}
         <div className='d-flex align-items-center flex-grow-1 flex-lg-grow-0'>
           <Link to='/dashboard' className='d-lg-none'>
-            <img
-              alt='Logo'
-              src={toAbsoluteUrl('/public/media/logos/demo6.svg')}
-              className='h-30px'
-            />
+            <img alt='Logo' src={toAbsoluteUrl('/media/logos/demo6.svg')} className='h-30px' />
           </Link>
         </div>
         {/* end::Mobile logo */}

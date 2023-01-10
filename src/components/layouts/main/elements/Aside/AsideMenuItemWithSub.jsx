@@ -13,8 +13,8 @@ const AsideMenuItemWithSub = ({children, to, title, icon, fontIcon, hasBullet}) 
   return (
     <div
       className={clsx('menu-item', {'here show': isActive}, 'menu-accordion')}
-      data-kt-menu-sub='accordion'
-      data-kt-menu-trigger='click'
+      data-menu-sub='accordion'
+      data-menu-trigger='click'
     >
       <span className='menu-link'>
         {hasBullet && (

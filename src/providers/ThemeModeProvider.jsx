@@ -5,7 +5,7 @@ const systemMode = window.matchMedia('(prefers-color-scheme: dark)') ? 'dark' : 
 
 const themeModeSwitchHelper = (_mode) => {
   const mode = _mode !== 'system' ? _mode : systemMode
-  const imageUrl = '/public/media/patterns/header-bg' + (mode === 'light' ? '.jpg' : '-dark.png')
+  const imageUrl = '/media/patterns/header-bg' + (mode === 'light' ? '.jpg' : '-dark.png')
   document.body.style.backgroundImage = `url("${toAbsoluteUrl(imageUrl)}")`
 }
 

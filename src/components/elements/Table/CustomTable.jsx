@@ -36,7 +36,7 @@ export function CustomTable(props) {
         <h3 className='card-title align-items-start flex-column'>
           <div className='d-flex align-items-center position-relative my-1'>
             <CustomSVG
-              path='/public/media/icons/search.svg'
+              path='/media/icons/search.svg'
               className='svg-icon-1 position-absolute ms-6'
             />
             <DebouncedInput
@@ -96,13 +96,13 @@ export function CustomTable(props) {
                               {{
                                 asc: (
                                   <CustomSVG
-                                    path='/public/media/icons/arrows/caret-top.svg'
+                                    path='/media/icons/arrows/caret-top.svg'
                                     className={clsx('text-muted')}
                                   />
                                 ),
                                 desc: (
                                   <CustomSVG
-                                    path='/public/media/icons/arrows/caret-down.svg'
+                                    path='/media/icons/arrows/caret-down.svg'
                                     className={clsx('text-muted')}
                                   />
                                 ),

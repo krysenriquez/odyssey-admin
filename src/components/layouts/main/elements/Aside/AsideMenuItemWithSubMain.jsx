@@ -12,8 +12,8 @@ const AsideMenuItemWithSubMain = ({children, to, title, icon, fontIcon, hasBulle
   return (
     <div
       className={clsx('menu-item py-3', {'here show': isActive})}
-      data-kt-menu-trigger='click'
-      data-kt-menu-placement='right-start'
+      data-menu-trigger='click'
+      data-menu-placement='right-start'
     >
       <OverlayTrigger
         placement='right'

@@ -26,7 +26,7 @@ export const ActivitySummaryCount = () => {
                   <div className='symbol symbol-45px w-40px me-5'>
                     <span className='symbol-label bg-lighten'>
                       <CustomSVG
-                        path='/public/media/icons/communication/persons.svg'
+                        path='/media/icons/communication/persons.svg'
                         className='svg-icon svg-icon-1 svg-icon-primary'
                       />
                     </span>

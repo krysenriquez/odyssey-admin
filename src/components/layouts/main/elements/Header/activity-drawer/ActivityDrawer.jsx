@@ -26,10 +26,7 @@ const ActivityDrawer = () => (
             className='btn btn-sm btn-icon btn-active-light-primary me-n5'
             id='kt_activities_close'
           >
-            <CustomSVG
-              path='/public/media/icons/duotune/arrows/arr061.svg'
-              className='svg-icon-1'
-            />
+            <CustomSVG path='/media/icons/duotune/arrows/arr061.svg' className='svg-icon-1' />
           </button>
         </div>
       </div>
@@ -59,7 +56,7 @@ const ActivityDrawer = () => (
         <Link to='/crafted/pages/profile' className='btn btn-bg-body text-primary'>
           View All Activities
           <CustomSVG
-            path='/public/media/icons/duotune/arrows/arr064.svg'
+            path='/media/icons/duotune/arrows/arr064.svg'
             className='svg-icon-3 svg-icon-primary'
           />
         </Link>

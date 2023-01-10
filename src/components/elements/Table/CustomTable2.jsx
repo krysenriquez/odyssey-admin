@@ -6,14 +6,17 @@ import {
   getFilteredRowModel,
   getSortedRowModel,
   getPaginationRowModel,
+  getFacetedUniqueValues,
+  getFacetedMinMaxValues,
   flexRender,
 } from '@tanstack/react-table'
 import {DebouncedInput} from '../Input/DebouncedInput'
 import {CustomSVG} from '../SVG/CustomSVG'
 import {CustomCardBody} from '../Card'
+import {Filter} from '../Input/Filter'
 
 export function CustomTable2(props) {
-  const {data, columns, hasToolbar, toolbarButtonName, handletoolbarButtonClick} = props
+  const {data, columns, canFilter, hasToolbar, toolbarButtonName, handletoolbarButtonClick} = props
   const [globalFilter, setGlobalFilter] = useState('')
   const [columnVisibility, setColumnVisibility] = useState({})
 
@@ -29,6 +32,8 @@ export function CustomTable2(props) {
     getPaginationRowModel: getPaginationRowModel(),
     getSortedRowModel: getSortedRowModel(),
     onGlobalFilterChange: setGlobalFilter,
+    getFacetedUniqueValues: getFacetedUniqueValues(),
+    getFacetedMinMaxValues: getFacetedMinMaxValues(),
   })
 
   return (
@@ -37,7 +42,7 @@ export function CustomTable2(props) {
         <h3 className='card-title align-items-start flex-column'>
           <div className='d-flex align-items-center position-relative my-1'>
             <CustomSVG
-              path='/public/media/icons/search.svg'
+              path='/media/icons/search.svg'
               className='svg-icon-1 position-absolute ms-6'
             />
             <DebouncedInput
@@ -49,6 +54,7 @@ export function CustomTable2(props) {
           </div>
         </h3>
         <div className='card-toolbar gap-5'>
+          {canFilter ? <Filter table={table} /> : <></>}
           {hasToolbar ? (
             <button
               type='button'
@@ -97,13 +103,13 @@ export function CustomTable2(props) {
                               {{
                                 asc: (
                                   <CustomSVG
-                                    path='/public/media/icons/arrows/caret-top.svg'
+                                    path='/media/icons/arrows/caret-top.svg'
                                     className={clsx('text-muted')}
                                   />
                                 ),
                                 desc: (
                                   <CustomSVG
-                                    path='/public/media/icons/arrows/caret-down.svg'
+                                    path='/media/icons/arrows/caret-down.svg'
                                     className={clsx('text-muted')}
                                   />
                                 ),

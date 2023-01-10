@@ -26,7 +26,7 @@ const AsideMenu = ({asideMenuCSSClasses}) => {
       <div
         className='menu menu-column menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-bold'
         id='#kt_aside_menu'
-        data-kt-menu='true'
+        data-menu='true'
       >
         <AsideMenuMain />
       </div>

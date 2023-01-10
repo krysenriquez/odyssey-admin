@@ -21,11 +21,7 @@ const AsideDefault = () => {
       {/* begin::Brand */}
       <div className='aside-logo  py-8' id='kt_aside_logo'>
         <Link to='/dashboard' className='d-flex align-items-center'>
-          <img
-            src={toAbsoluteUrl('/public/media/logos/tci.png')}
-            alt='logo'
-            className='h-100px logo'
-          />
+          <img src={toAbsoluteUrl('/media/logos/tci.png')} alt='logo' className='h-100px logo' />
         </Link>
       </div>
       {/* end::Brand */}

@@ -12,7 +12,7 @@ export const SimpleLayout = () => {
     <div
       className='d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed'
       style={{
-        backgroundImage: `url(${toAbsoluteUrl('/public/media/illustrations/dozzy/1.png')})`,
+        backgroundImage: `url(${toAbsoluteUrl('/media/illustrations/dozzy/1.png')})`,
       }}
     >
       <Outlet />
