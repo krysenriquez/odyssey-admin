@@ -1,7 +1,15 @@
 import {string, object, boolean, number} from 'yup'
 import packageCreateFormModel from './packageCreateFormModel'
 const {
-  formField: {packageName, packageAmount, pointValue, flushOutLimit, hasPairing, isBco},
+  formField: {
+    packageName,
+    packageAmount,
+    pointValue,
+    flushOutLimit,
+    hasPairing,
+    isFranchise,
+    isBco,
+  },
 } = packageCreateFormModel
 
 export default object().shape({
@@ -19,5 +27,6 @@ export default object().shape({
     .required(`${flushOutLimit.requiredErrorMsg}`)
     .integer(`${flushOutLimit.invalidErrorMsg}`),
   [hasPairing.key]: boolean(),
+  [isFranchise.key]: boolean(),
   [isBco.key]: boolean(),
 })

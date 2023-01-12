@@ -33,6 +33,11 @@ export default {
       name: 'hasPairing',
       label: 'Has Expiring',
     },
+    isFranchise: {
+      key: 'isFranchise',
+      name: 'isFranchise',
+      label: 'Is Franchise',
+    },
     isBco: {
       key: 'isBco',
       name: 'isBco',

@@ -21,7 +21,15 @@ const PackageCreateForm = () => {
   const [initialPackage, setInitialPackage] = useState(packageCreateInitialValues)
   const {
     formId,
-    formField: {packageName, packageAmount, pointValue, flushOutLimit, hasPairing, isBco},
+    formField: {
+      packageName,
+      packageAmount,
+      pointValue,
+      flushOutLimit,
+      hasPairing,
+      isFranchise,
+      isBco,
+    },
   } = packageCreateFormModel
 
   const cancel = (withRefresh) => {
@@ -92,6 +100,16 @@ const PackageCreateForm = () => {
                   </label>
                   <label className='form-check form-switch form-check-custom form-check-solid'>
                     <CheckboxField name={hasPairing.name} label={hasPairing.label} />
+                  </label>
+                </div>
+              </div>
+              <div className='row g-9 mb-10'>
+                <div className='col-6'>
+                  <label className='d-flex align-items-center fs-6 fw-semibold form-label mb-2'>
+                    <span>Is a Franchise Package?</span>
+                  </label>
+                  <label className='form-check form-switch form-check-custom form-check-solid'>
+                    <CheckboxField name={isFranchise.name} label={isFranchise.label} />
                   </label>
                 </div>
               </div>
