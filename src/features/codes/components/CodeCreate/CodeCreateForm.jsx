@@ -30,7 +30,6 @@ export const CodeCreateForm = () => {
   } = codeCreateFormModel
 
   const [packagePlanOptions, setPackagePlanOptions] = useState([])
-  const [codeStatuses, setCodeStatuses] = useState([])
   const [codeTypes, setCodeTypes] = useState([])
 
   useEffect(() => {
@@ -43,7 +42,6 @@ export const CodeCreateForm = () => {
 
   useEffect(() => {
     if (enums) {
-      setCodeStatuses(arrayToSelectOptions(enums['codeStatuses'], 'SELECT_CODE_STATUS'))
       setCodeTypes(arrayToSelectOptions(enums['codeTypes'], 'SELECT_CODE_TYPE'))
     }
   }, [enums])
@@ -118,16 +116,7 @@ export const CodeCreateForm = () => {
               </div>
             </div>
             <div className='row mb-7'>
-              <div className='col-6'>
-                <SelectField
-                  name={status.name}
-                  label={status.label}
-                  data={codeStatuses}
-                  required
-                  translate={true}
-                />
-              </div>
-              <div className='col-6'>
+              <div className='col-12'>
                 <InputField name={quantity.name} label={quantity.label} required />
               </div>
             </div>

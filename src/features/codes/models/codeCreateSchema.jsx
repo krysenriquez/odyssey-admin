@@ -3,7 +3,7 @@ import {verifyAccountNumber} from '@/features/members/api'
 
 import codeCreateFormModel from './codeCreateFormModel'
 const {
-  formField: {packagePlan, status, codeType, owner, quantity, isExpiring},
+  formField: {packagePlan, codeType, owner, quantity, isExpiring},
 } = codeCreateFormModel
 
 const validateAccountNumber = async (value, ctx) => {
@@ -19,7 +19,6 @@ const validateAccountNumber = async (value, ctx) => {
 
 export default object().shape({
   [packagePlan.key]: string().required(`${packagePlan.requiredErrorMsg}`),
-  [status.key]: string().required(`${status.requiredErrorMsg}`),
   [owner.key]: string()
     .required(`${owner.requiredErrorMsg}`)
     .test({

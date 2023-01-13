@@ -7,12 +7,6 @@ export default {
       label: 'Package',
       requiredErrorMsg: 'Package is required',
     },
-    status: {
-      key: 'status',
-      name: 'status',
-      label: 'Status',
-      requiredErrorMsg: 'Status is required',
-    },
     owner: {
       key: 'owner',
       name: 'owner',
