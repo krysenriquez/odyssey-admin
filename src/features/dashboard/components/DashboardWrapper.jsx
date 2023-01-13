@@ -6,6 +6,7 @@ import {ActivitySummaryTotal} from './widgets/ActivitySummaryTotal'
 import {ActivitySummaryCount} from './widgets/ActivitySummaryCount'
 import {CompanyWallet} from './widgets/CompanyWallet'
 import {TopEarners} from './widgets/TopEarners'
+import {ActivitySummaryTotalCarousel} from './widgets/ActivitySummaryTotalCarousel'
 import {MemberFranchiseeSummary} from './widgets/MemberFranchiseeSummary'
 const DashboardPage = () => {
   return (

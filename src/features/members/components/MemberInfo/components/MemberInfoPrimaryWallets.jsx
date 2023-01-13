@@ -30,7 +30,7 @@ export const MemberInfoPrimaryWallets = () => {
       {memberWallets ? (
         memberWallets.map((wallet) => {
           return (
-            <div className='col' key={wallet.wallet}>
+            <div className='col-xl-4' key={wallet.wallet}>
               <div className='card pt-4 h-md-100 mb-6 mb-md-0'>
                 <div className='card-header border-0'>
                   <div className='card-title'>
