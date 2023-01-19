@@ -125,10 +125,10 @@ export class LayoutSetup {
 
     if (config.responsive) {
       LayoutSetup.classes.pageTitle.push('mb-5 mb-lg-0')
-      LayoutSetup.attributes.pageTitle.set('data-kt-swapper', 'true')
-      LayoutSetup.attributes.pageTitle.set('data-kt-swapper-mode', 'prepend')
+      LayoutSetup.attributes.pageTitle.set('data-swapper', 'true')
+      LayoutSetup.attributes.pageTitle.set('data-swapper-mode', 'prepend')
       LayoutSetup.attributes.pageTitle.set(
-        'data-kt-swapper-parent',
+        'data-swapper-parent',
         `{default: '#kt_content_container', '${config.responsiveBreakpoint}: ${config.responsiveTarget}'`
       )
     }

@@ -5,7 +5,7 @@ class ThemeMode {
   element = null
 
   getParamName = (postfix) => {
-    const ktName = document.body.hasAttribute('data-kt-name')
+    const ktName = document.body.hasAttribute('data-name')
     const name = ktName ? ktName + '_' : ''
     return 'kt_' + name + 'theme_mode_' + postfix
   }
@@ -63,10 +63,10 @@ class ThemeMode {
 
     // Read active menu mode value
     const activeMenuItem =
-      this.menu?.querySelector('[data-kt-element="mode"][data-kt-value="' + menuMode + '"]') || null
+      this.menu?.querySelector('[data-element="mode"][data-value="' + menuMode + '"]') || null
 
     // Enable switching state
-    this.element?.setAttribute('data-kt-theme-mode-switching', 'true')
+    this.element?.setAttribute('data-theme-mode-switching', 'true')
 
     // Set mode to the target element
     this.element?.setAttribute('data-theme', mode)
@@ -74,7 +74,7 @@ class ThemeMode {
     // Disable switching state
     const self = this
     setTimeout(function () {
-      self.element?.removeAttribute('data-kt-theme-mode-switching')
+      self.element?.removeAttribute('data-theme-mode-switching')
     }, 300)
 
     // Store mode value in storage
@@ -94,8 +94,8 @@ class ThemeMode {
 
   getMenuMode = () => {
     const menuModeParam = this.getParamName('menu')
-    const menuItem = this.menu?.querySelector('.active[data-kt-element="mode"]')
-    const dataKTValue = menuItem?.getAttribute('data-kt-value')
+    const menuItem = this.menu?.querySelector('.active[data-element="mode"]')
+    const dataKTValue = menuItem?.getAttribute('data-value')
     if (dataKTValue) {
       return dataKTValue
     }
@@ -121,16 +121,15 @@ class ThemeMode {
 
   getActiveMenuItem = () => {
     return (
-      this.menu?.querySelector(
-        '[data-kt-element="mode"][data-kt-value="' + this.getMenuMode() + '"]'
-      ) || null
+      this.menu?.querySelector('[data-element="mode"][data-value="' + this.getMenuMode() + '"]') ||
+      null
     )
   }
 
   setActiveMenuItem = (item) => {
     const menuModeParam = this.getParamName('menu')
-    const menuMode = item.getAttribute('data-kt-value')
-    const activeItem = this.menu?.querySelector('.active[data-kt-element="mode"]')
+    const menuMode = item.getAttribute('data-value')
+    const activeItem = this.menu?.querySelector('.active[data-element="mode"]')
     if (activeItem) {
       activeItem.classList.remove('active')
     }
@@ -142,11 +141,11 @@ class ThemeMode {
   }
 
   handleMenu = () => {
-    this.menu?.querySelectorAll?.('[data-kt-element="mode"]')?.forEach((item) => {
+    this.menu?.querySelectorAll?.('[data-element="mode"]')?.forEach((item) => {
       item.addEventListener('click', (e) => {
         e.preventDefault()
 
-        const menuMode = item.getAttribute('data-kt-value')
+        const menuMode = item.getAttribute('data-value')
         const mode = menuMode === 'system' ? this.getSystemMode() : menuMode
 
         if (mode) {
@@ -157,22 +156,22 @@ class ThemeMode {
   }
 
   flipImages = () => {
-    document.querySelectorAll('[data-kt-img-dark]')?.forEach((item) => {
+    document.querySelectorAll('[data-img-dark]')?.forEach((item) => {
       if (item.tagName === 'IMG') {
-        if (this.getMode() === 'dark' && item.hasAttribute('data-kt-img-dark')) {
-          item.setAttribute('data-kt-img-light', item.getAttribute('src') || '')
-          item.setAttribute('src', item.getAttribute('data-kt-img-dark') || '')
-        } else if (this.getMode() === 'light' && item.hasAttribute('data-kt-img-light')) {
-          item.setAttribute('data-kt-img-dark', item.getAttribute('src') || '')
-          item.setAttribute('src', item.getAttribute('data-kt-img-light') || '')
+        if (this.getMode() === 'dark' && item.hasAttribute('data-img-dark')) {
+          item.setAttribute('data-img-light', item.getAttribute('src') || '')
+          item.setAttribute('src', item.getAttribute('data-img-dark') || '')
+        } else if (this.getMode() === 'light' && item.hasAttribute('data-img-light')) {
+          item.setAttribute('data-img-dark', item.getAttribute('src') || '')
+          item.setAttribute('src', item.getAttribute('data-img-light') || '')
         }
       } else {
-        if (this.getMode() === 'dark' && item.hasAttribute('data-kt-img-dark')) {
-          item.setAttribute('data-kt-img-light', item.getAttribute('src') || '')
-          item.style.backgroundImage = "url('" + item.getAttribute('data-kt-img-dark') + "')"
-        } else if (this.getMode() === 'light' && item.hasAttribute('data-kt-img-light')) {
-          item.setAttribute('data-kt-img-dark', item.getAttribute('src') || '')
-          item.style.backgroundImage = "url('" + item.getAttribute('data-kt-img-light') + "')"
+        if (this.getMode() === 'dark' && item.hasAttribute('data-img-dark')) {
+          item.setAttribute('data-img-light', item.getAttribute('src') || '')
+          item.style.backgroundImage = "url('" + item.getAttribute('data-img-dark') + "')"
+        } else if (this.getMode() === 'light' && item.hasAttribute('data-img-light')) {
+          item.setAttribute('data-img-dark', item.getAttribute('src') || '')
+          item.style.backgroundImage = "url('" + item.getAttribute('data-img-light') + "')"
         }
       }
     })
@@ -191,7 +190,7 @@ class ThemeMode {
   }
 
   init = () => {
-    this.menu = document.querySelector('[data-kt-element="theme-mode-menu"]')
+    this.menu = document.querySelector('[data-element="theme-mode-menu"]')
     this.element = document.documentElement
 
     this.initMode()

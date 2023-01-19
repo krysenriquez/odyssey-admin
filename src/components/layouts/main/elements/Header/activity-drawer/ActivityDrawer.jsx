@@ -7,14 +7,14 @@ const ActivityDrawer = () => (
   <div
     id='kt_activities'
     className='bg-body'
-    data-kt-drawer='true'
-    data-kt-drawer-name='activities'
-    data-kt-drawer-activate='true'
-    data-kt-drawer-overlay='true'
-    data-kt-drawer-width="{default:'300px', 'lg': '900px'}"
-    data-kt-drawer-direction='end'
-    data-kt-drawer-toggle='#kt_activities_toggle'
-    data-kt-drawer-close='#kt_activities_close'
+    data-drawer='true'
+    data-drawer-name='activities'
+    data-drawer-activate='true'
+    data-drawer-overlay='true'
+    data-drawer-width="{default:'300px', 'lg': '900px'}"
+    data-drawer-direction='end'
+    data-drawer-toggle='#kt_activities_toggle'
+    data-drawer-close='#kt_activities_close'
   >
     <div className='card shadow-none rounded-0'>
       <div className='card-header' id='kt_activities_header'>
@@ -34,11 +34,11 @@ const ActivityDrawer = () => (
         <div
           id='kt_activities_scroll'
           className='position-relative scroll-y me-n5 pe-5'
-          data-kt-scroll='true'
-          data-kt-scroll-height='auto'
-          data-kt-scroll-wrappers='#kt_activities_body'
-          data-kt-scroll-dependencies='#kt_activities_header, #kt_activities_footer'
-          data-kt-scroll-offset='5px'
+          data-scroll='true'
+          data-scroll-height='auto'
+          data-scroll-wrappers='#kt_activities_body'
+          data-scroll-dependencies='#kt_activities_header, #kt_activities_footer'
+          data-scroll-offset='5px'
         >
           <div className='timeline'>
             {/* <Item1 />

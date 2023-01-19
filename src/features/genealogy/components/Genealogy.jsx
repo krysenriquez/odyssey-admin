@@ -13,10 +13,8 @@ const GenealogyPage = () => {
   const navigate = useNavigate()
   const response = useGenealogyQueryData()
   const isLoading = useGenealogyQueryLoading()
-  const [isModalOpen, setIsModalOpen] = useState(false)
   const genealogy = useMemo(() => response, [response])
   const [tree, setTree] = useState([])
-
   const defaultAvatar = toAbsoluteUrl('/media/avatars/blank.png')
   var jsonTree = []
 
@@ -202,7 +200,7 @@ const GenealogyPage = () => {
   )
 }
 
-const Genealogy = () => {
+export const Genealogy = () => {
   return (
     <>
       <GenealogyQueryProvider>
@@ -211,5 +209,3 @@ const Genealogy = () => {
     </>
   )
 }
-
-export {Genealogy}

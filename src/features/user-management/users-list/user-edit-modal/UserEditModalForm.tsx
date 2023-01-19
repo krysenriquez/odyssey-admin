@@ -76,12 +76,12 @@ const UserEditModalForm: FC<Props> = ({user, isUserLoading}) => {
         <div
           className='d-flex flex-column scroll-y me-n7 pe-7'
           id='kt_modal_add_user_scroll'
-          data-kt-scroll='true'
-          data-kt-scroll-activate='{default: false, lg: true}'
-          data-kt-scroll-max-height='auto'
-          data-kt-scroll-dependencies='#kt_modal_add_user_header'
-          data-kt-scroll-wrappers='#kt_modal_add_user_scroll'
-          data-kt-scroll-offset='300px'
+          data-scroll='true'
+          data-scroll-activate='{default: false, lg: true}'
+          data-scroll-max-height='auto'
+          data-scroll-dependencies='#kt_modal_add_user_header'
+          data-scroll-wrappers='#kt_modal_add_user_scroll'
+          data-scroll-offset='300px'
         >
           {/* begin::Input group */}
           <div className='fv-row mb-7'>
@@ -92,7 +92,7 @@ const UserEditModalForm: FC<Props> = ({user, isUserLoading}) => {
             {/* begin::Image input */}
             <div
               className='image-input image-input-outline'
-              data-kt-image-input='true'
+              data-image-input='true'
               style={{backgroundImage: `url('${blankImg}')`}}
             >
               {/* begin::Preview existing avatar */}
@@ -105,7 +105,7 @@ const UserEditModalForm: FC<Props> = ({user, isUserLoading}) => {
               {/* begin::Label */}
               {/* <label
               className='btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow'
-              data-kt-image-input-action='change'
+              data-image-input-action='change'
               data-bs-toggle='tooltip'
               title='Change avatar'
             >
@@ -119,7 +119,7 @@ const UserEditModalForm: FC<Props> = ({user, isUserLoading}) => {
               {/* begin::Cancel */}
               {/* <span
               className='btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow'
-              data-kt-image-input-action='cancel'
+              data-image-input-action='cancel'
               data-bs-toggle='tooltip'
               title='Cancel avatar'
             >
@@ -130,7 +130,7 @@ const UserEditModalForm: FC<Props> = ({user, isUserLoading}) => {
               {/* begin::Remove */}
               {/* <span
               className='btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow'
-              data-kt-image-input-action='remove'
+              data-image-input-action='remove'
               data-bs-toggle='tooltip'
               title='Remove avatar'
             >
@@ -376,7 +376,7 @@ const UserEditModalForm: FC<Props> = ({user, isUserLoading}) => {
             type='reset'
             onClick={() => cancel()}
             className='btn btn-light me-3'
-            data-kt-users-modal-action='cancel'
+            data-users-modal-action='cancel'
             disabled={formik.isSubmitting || isUserLoading}
           >
             Discard
@@ -385,7 +385,7 @@ const UserEditModalForm: FC<Props> = ({user, isUserLoading}) => {
           <button
             type='submit'
             className='btn btn-primary'
-            data-kt-users-modal-action='submit'
+            data-users-modal-action='submit'
             disabled={isUserLoading || formik.isSubmitting || !formik.isValid || !formik.touched}
           >
             <span className='indicator-label'>Submit</span>

@@ -8,8 +8,8 @@ const UserSelectionHeader = ({tableProps}) => {
         <input
           className='form-check-input'
           type='checkbox'
-          data-kt-check={isAllSelected}
-          data-kt-check-target='#kt_table_users .form-check-input'
+          data-check={isAllSelected}
+          data-check-target='#kt_table_users .form-check-input'
           checked={isAllSelected}
           onChange={onSelectAll}
         />

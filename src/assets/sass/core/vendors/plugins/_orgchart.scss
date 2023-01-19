@@ -47,7 +47,17 @@
 [data-n-id] {
   text {
     font-size: 1.5rem !important;
+    font-weight: 600;
     transform: translate(0rem, 0px);
+    fill: var(--kt-text-dark);
+  }
+}
+[data-l-id] {
+  text {
+    font-size: 4rem !important;
+    font-weight: 600;
+    transform: translate(0rem, -10rem);
+    fill: var(--kt-text-dark);
   }
 }
 
@@ -107,18 +117,97 @@
   }
 }
 
-[data-theme='light'] {
-  [data-n-id] {
-    text {
-      color: var(--kt-text-dark);
-    }
+.node.addMember {
+  circle {
+    stroke: $package-add;
+    stroke-width: 10px;
   }
 }
 
-[data-theme='dark'] {
-  [data-n-id] {
-    text {
-      color: var(--kt-text-dark);
-    }
+.node.blankMember {
+  circle {
+    stroke: $package-blank;
+    stroke-width: 4px;
+  }
+}
+
+$outside-circle-dim: 110px;
+$light-circle-dim: 95px;
+$image-dim: 80px;
+
+.org-component {
+  background-color: transparent !important;
+
+  .node {
+    position: absolute;
+    margin-top: calc($outside-circle-dim / -2) !important;
+    width: $outside-circle-dim !important;
+    height: $outside-circle-dim !important;
+    border-radius: 100px;
+  }
+  .node.Platinum {
+    background-color: $package-platinum !important;
+  }
+
+  .node.Gold {
+    background-color: $package-gold !important;
+  }
+
+  .node.Silver {
+    background-color: $package-silver !important;
+  }
+
+  .node.Starter {
+    background-color: $package-starter !important;
+  }
+
+  .node.addMember {
+    background-color: $package-add !important;
+  }
+
+  .node.blankMember {
+    background-color: $package-blank !important;
+    cursor: not-allowed;
+  }
+
+  .light-circle {
+    background-color: #ffffff !important;
+    position: absolute !important;
+    margin-top: calc($light-circle-dim / -2) !important;
+    border-radius: 100px !important;
+    width: $light-circle-dim !important;
+    height: $light-circle-dim !important;
+  }
+
+  .node-image {
+    position: absolute;
+    margin-top: calc($image-dim / -2) !important;
+    border-radius: 100px;
+    width: $image-dim !important;
+    height: $image-dim !important;
+  }
+
+  .node-card {
+    top: calc($outside-circle-dim / 2 + 10px);
+    position: absolute;
+    height: 30px;
+  }
+
+  .node-title {
+    background-color: transparent;
+    height: 28px;
+    text-align: center;
+    color: --kt-text-dark;
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+  .node-subtitle {
+    background-color: transparent;
+    height: 28px;
+    text-align: center;
+    color: --kt-text-dark;
+    font-weight: bold;
+    font-size: 12px;
   }
 }

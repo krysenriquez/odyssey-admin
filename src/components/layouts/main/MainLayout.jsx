@@ -32,11 +32,11 @@ const MainLayout = () => {
         <div className='page d-flex flex-row flex-column-fluid'>
           <AsideDefault />
           {/* begin::Wrapper */}
-          <div className='wrapper d-flex flex-column flex-row-fluid' id='kt_wrapper'>
+          <div className='wrapper d-flex flex-column flex-row-fluid'>
             <HeaderWrapper />
             <Toolbar />
             {/* begin::Content */}
-            <div id='kt_content' className='content d-flex flex-column flex-column-fluid'>
+            <div className='content d-flex flex-column flex-column-fluid'>
               <Content>
                 <Outlet />
               </Content>

@@ -32,7 +32,7 @@ const UsersListSearchComponent = () => {
         />
         <input
           type='text'
-          data-kt-user-table-filter='search'
+          data-user-table-filter='search'
           className='form-control form-control-solid w-250px ps-14'
           placeholder='Search user'
           value={searchTerm}

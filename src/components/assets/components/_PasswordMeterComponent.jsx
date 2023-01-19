@@ -13,10 +13,10 @@ const defaultPasswordMeterOptions = {
 
 const defaultPasswordMeterQueires = {
   componentName: 'password-meter',
-  instanseQuery: '[data-kt-password-meter]',
+  instanseQuery: '[data-password-meter]',
   inputQuery: 'input[type]',
-  visibilityQuery: '[data-kt-password-meter-control="visibility"]',
-  highlightQuery: '[data-kt-password-meter-control="highlight"]',
+  visibilityQuery: '[data-password-meter-control="visibility"]',
+  highlightQuery: '[data-password-meter-control="highlight"]',
 }
 
 class PasswordMeterComponent {

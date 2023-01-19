@@ -27,7 +27,7 @@ export function ScrollTop() {
   }
 
   const updateHeaderSticky = () => {
-    const stickyHeader = document.body.querySelectorAll(`[data-kt-sticky-name="header"]`)
+    const stickyHeader = document.body.querySelectorAll(`[data-sticky-name="header"]`)
     if (stickyHeader && stickyHeader.length > 0) {
       const sticky = StickyComponent.getInstance(stickyHeader[0])
       if (sticky) {
@@ -50,7 +50,7 @@ export function ScrollTop() {
   }, [pathname])
 
   return (
-    <div id='kt_scrolltop' className='scrolltop' data-kt-scrolltop='true'>
+    <div id='kt_scrolltop' className='scrolltop' data-scrolltop='true'>
       <CustomSVG path='/media/icons/arrows/scrolltop.svg' />
     </div>
   )

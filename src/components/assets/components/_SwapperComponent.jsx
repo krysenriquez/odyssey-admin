@@ -47,8 +47,8 @@ const defaultSwapperOptions = {
 
 const defaultSwapperQueires = {
   componentName: 'swapper',
-  instanseQuery: '[data-kt-swapper="true"]',
-  attrQuery: 'data-kt-swapper-',
+  instanseQuery: '[data-swapper="true"]',
+  attrQuery: 'data-swapper-',
 }
 
 class SwapperComponent {

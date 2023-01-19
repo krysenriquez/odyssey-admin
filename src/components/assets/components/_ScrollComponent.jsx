@@ -21,13 +21,13 @@ class ScrollComponent {
     this.options = Object.assign(defaultScrollOptions, options)
     this.id = this.element.getAttribute('id') || ''
     this.update()
-    // this.element.setAttribute('data-kt-scrolltop', 'true')
+    // this.element.setAttribute('data-scrolltop', 'true')
     DataUtil.set(this.element, 'scroll', this)
   }
 
   getOption = (name) => {
-    if (this.element.hasAttribute('data-kt-scroll-' + name) === true) {
-      const attr = this.element.getAttribute('data-kt-scroll-' + name) || ''
+    if (this.element.hasAttribute('data-scroll-' + name) === true) {
+      const attr = this.element.getAttribute('data-scroll-' + name) || ''
       let value = getAttributeValueByBreakpoint(attr)
       if (value !== null && String(value) === 'true') {
         value = true
@@ -196,10 +196,7 @@ class ScrollComponent {
   ///////////////////////
   update = () => {
     // Activate/deactivate
-    if (
-      this.getOption('activate') === true ||
-      !this.element.hasAttribute('data-kt-scroll-activate')
-    ) {
+    if (this.getOption('activate') === true || !this.element.hasAttribute('data-scroll-activate')) {
       this.setupHeight()
       this.setupScrollHandler()
       this.setupState()
@@ -251,9 +248,9 @@ class ScrollComponent {
     })
   }
 
-  static destroyAll(attr = '[data-kt-scroll="true"]') {}
+  static destroyAll(attr = '[data-scroll="true"]') {}
 
-  static bootstrap(attr = '[data-kt-scroll="true"]') {
+  static bootstrap(attr = '[data-scroll="true"]') {
     ScrollComponent.createInstances(attr)
     ScrollComponent.resize()
   }
@@ -266,12 +263,12 @@ class ScrollComponent {
     return scroll
   }
 
-  static reinitialization(attr = '[data-kt-scroll="true"]') {
+  static reinitialization(attr = '[data-scroll="true"]') {
     ScrollComponent.createInstances(attr)
   }
 
   static updateAll() {
-    const elements = document.body.querySelectorAll('[data-kt-scroll="true"]')
+    const elements = document.body.querySelectorAll('[data-scroll="true"]')
     elements.forEach((element) => {
       const instance = ScrollComponent.getInstance(element)
       if (instance) {

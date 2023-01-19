@@ -14,7 +14,7 @@ export function Dropdown1() {
           <div>
             <select
               className='form-select form-select-solid'
-              data-kt-select2='true'
+              data-select2='true'
               data-placeholder='Select option'
               data-allow-clear='true'
               defaultValue={'1'}

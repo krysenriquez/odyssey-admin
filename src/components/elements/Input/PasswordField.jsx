@@ -9,7 +9,7 @@ export default function PasswordField(props) {
   const isError = touched && error && true
   const isValid = touched && !!!error && value
   const [showPassword, setShowPassword] = useState(false)
-  console.log(value)
+
   function renderErrorMessage() {
     if (isError) {
       return error
@@ -36,7 +36,7 @@ export default function PasswordField(props) {
           {...rest}
         />
         <span
-          className='btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2'
+          className='btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-6'
           onClick={handeClick}
         >
           <i

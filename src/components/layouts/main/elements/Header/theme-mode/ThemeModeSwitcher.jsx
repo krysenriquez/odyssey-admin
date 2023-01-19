@@ -55,7 +55,7 @@ const ThemeModeSwitcher = ({
             })}
             onClick={() => switchMode('light')}
           >
-            <span className='menu-icon' data-kt-element='icon'>
+            <span className='menu-icon' data-element='icon'>
               <CustomSVG path='/media/icons/light.svg' className='svg-icon-3' />
             </span>
             <span className='menu-title'>Light</span>
@@ -72,7 +72,7 @@ const ThemeModeSwitcher = ({
             })}
             onClick={() => switchMode('dark')}
           >
-            <span className='menu-icon' data-kt-element='icon'>
+            <span className='menu-icon' data-element='icon'>
               <CustomSVG path='/media/icons/dark.svg' className='svg-icon-3' />
             </span>
             <span className='menu-title'>Dark</span>
@@ -89,7 +89,7 @@ const ThemeModeSwitcher = ({
             })}
             onClick={() => switchMode('system')}
           >
-            <span className='menu-icon' data-kt-element='icon'>
+            <span className='menu-icon' data-element='icon'>
               <CustomSVG path='/media/icons/system.svg' className='svg-icon-3' />
             </span>
             <span className='menu-title'>System</span>

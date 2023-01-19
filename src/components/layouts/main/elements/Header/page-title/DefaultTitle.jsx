@@ -10,9 +10,9 @@ const DefaultTitle = () => {
 
   return (
     <div
-      data-kt-swapper='true'
-      data-kt-swapper-mode='prepend'
-      data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
+      data-swapper='true'
+      data-swapper-mode='prepend'
+      data-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
       className={clsx(
         'page-title d-flex align-items-center flex-wrap me-3',
         classes.pageTitle.join(' ')

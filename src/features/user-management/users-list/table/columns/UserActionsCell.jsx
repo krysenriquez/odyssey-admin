@@ -56,7 +56,7 @@ const UserActionsCell = ({id}) => {
         <div className='menu-item px-3'>
           <a
             className='menu-link px-3'
-            data-kt-users-table-filter='delete_row'
+            data-users-table-filter='delete_row'
             onClick={async () => await deleteItem.mutateAsync()}
           >
             Delete

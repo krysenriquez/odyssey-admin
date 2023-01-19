@@ -4,11 +4,11 @@ const defaultImageInputOptions = {}
 
 const defaultImageInputQueires = {
   componentName: 'image-input',
-  instanseQuery: '[data-kt-image-input]',
+  instanseQuery: '[data-image-input]',
   inputQuery: 'input[type="file"]',
   wrapperQuery: '.image-input-wrapper',
-  cancelQuery: '[data-kt-image-input-action="cancel"]',
-  removeQuery: '[data-kt-image-input-action="remove"]',
+  cancelQuery: '[data-image-input-action="cancel"]',
+  removeQuery: '[data-image-input-action="remove"]',
   hiddenQuery: 'input[type="hidden"]',
 }
 

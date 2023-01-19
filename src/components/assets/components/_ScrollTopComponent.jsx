@@ -45,12 +45,12 @@ class ScrollTopComponent {
     const offset = parseInt(this._getOption('offset'))
     const pos = getScrollTop() // current vertical position
     if (pos > offset) {
-      if (!document.body.hasAttribute('data-kt-scrolltop')) {
-        document.body.setAttribute('data-kt-scrolltop', 'on')
+      if (!document.body.hasAttribute('data-scrolltop')) {
+        document.body.setAttribute('data-scrolltop', 'on')
       }
     } else {
-      if (document.body.hasAttribute('data-kt-scrolltop')) {
-        document.body.removeAttribute('data-kt-scrolltop')
+      if (document.body.hasAttribute('data-scrolltop')) {
+        document.body.removeAttribute('data-scrolltop')
       }
     }
   }
@@ -61,7 +61,7 @@ class ScrollTopComponent {
   }
 
   _getOption = (name) => {
-    const attr = this.element.getAttribute(`data-kt-scrolltop-${name}`)
+    const attr = this.element.getAttribute(`data-scrolltop-${name}`)
     if (attr) {
       const value = getAttributeValueByBreakpoint(attr)
       return value !== null && String(value) === 'true'
@@ -122,11 +122,11 @@ class ScrollTopComponent {
   }
 
   static bootstrap = () => {
-    ScrollTopComponent.createInstances('[data-kt-scrolltop="true"]')
+    ScrollTopComponent.createInstances('[data-scrolltop="true"]')
   }
 
   static reinitialization = () => {
-    ScrollTopComponent.createInstances('[data-kt-scrolltop="true"]')
+    ScrollTopComponent.createInstances('[data-scrolltop="true"]')
   }
 
   static goTop = () => {

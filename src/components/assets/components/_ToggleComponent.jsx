@@ -17,15 +17,15 @@ class ToggleComponent {
     this.instanceUid = getUniqueIdWithPrefix('toggle')
     this.element = _element
 
-    const elementTargetAttr = this.element.getAttribute('data-kt-toggle-target')
+    const elementTargetAttr = this.element.getAttribute('data-toggle-target')
     if (elementTargetAttr) {
       this.target = document.querySelector(elementTargetAttr)
     }
-    const elementToggleAttr = this.element.getAttribute('data-kt-toggle-state')
+    const elementToggleAttr = this.element.getAttribute('data-toggle-state')
     this.state = elementToggleAttr || ''
-    const elementModeAttr = this.element.getAttribute('data-kt-toggle-mode')
+    const elementModeAttr = this.element.getAttribute('data-toggle-mode')
     this.mode = elementModeAttr || ''
-    this.attribute = 'data-kt-' + this.element.getAttribute('data-kt-toggle-name')
+    this.attribute = 'data-' + this.element.getAttribute('data-toggle-name')
 
     // Event Handlers
     this._handlers()
@@ -179,11 +179,11 @@ class ToggleComponent {
   }
 
   static reinitialization = () => {
-    ToggleComponent.createInstances('[data-kt-toggle]')
+    ToggleComponent.createInstances('[data-toggle]')
   }
 
   static bootstrap = () => {
-    ToggleComponent.createInstances('[data-kt-toggle]')
+    ToggleComponent.createInstances('[data-toggle]')
   }
 }
 

@@ -27,10 +27,10 @@ class StepperComponent {
     this.instanceUid = getUniqueIdWithPrefix('stepper')
 
     // Elements
-    this.steps = this.element.querySelectorAll('[data-kt-stepper-element="nav"]')
-    this.btnNext = this.element.querySelector('[data-kt-stepper-action="next"]')
-    this.btnPrev = this.element.querySelector('[data-kt-stepper-action="previous"]')
-    this.btnSubmit = this.element.querySelector('[data-kt-stepper-action="submit"]')
+    this.steps = this.element.querySelectorAll('[data-stepper-element="nav"]')
+    this.btnNext = this.element.querySelector('[data-stepper-action="next"]')
+    this.btnPrev = this.element.querySelector('[data-stepper-action="previous"]')
+    this.btnSubmit = this.element.querySelector('[data-stepper-action="submit"]')
 
     // Variables
     this.totatStepsNumber = this.steps?.length | 0
@@ -81,7 +81,7 @@ class StepperComponent {
       EventHandlerUtil.trigger(this.element, 'kt.stepper.previous', e)
     })
 
-    DOMEventHandlerUtil.on(this.element, '[data-kt-stepper-action="step"]', 'click', (e) => {
+    DOMEventHandlerUtil.on(this.element, '[data-stepper-action="step"]', 'click', (e) => {
       e.preventDefault()
 
       if (this.steps && this.steps.length > 0) {
@@ -103,7 +103,7 @@ class StepperComponent {
   }
 
   getStepContent = (index) => {
-    const content = this.element.querySelectorAll('[data-kt-stepper-element="content"]')
+    const content = this.element.querySelectorAll('[data-stepper-element="content"]')
     if (!content) {
       return false
     }
@@ -143,7 +143,7 @@ class StepperComponent {
 
     // Step Items
     const elements = this.element.querySelectorAll(
-      '[data-kt-stepper-element="nav"], [data-kt-stepper-element="content"], [data-kt-stepper-element="info"]'
+      '[data-stepper-element="nav"], [data-stepper-element="content"], [data-stepper-element="info"]'
     )
 
     if (!elements || elements.length <= 0) {
@@ -163,7 +163,7 @@ class StepperComponent {
 
         if (
           this.options.animation !== false &&
-          element.getAttribute('data-kt-stepper-element') === 'content'
+          element.getAttribute('data-stepper-element') === 'content'
         ) {
           ElementStyleUtil.set(element, 'animationDuration', this.options.animationSpeed)
 
@@ -306,7 +306,7 @@ class StepperComponent {
     return stepper
   }
 
-  static bootstrap(attr = '[data-kt-stepper]') {
+  static bootstrap(attr = '[data-stepper]') {
     StepperComponent.createInstances(attr)
   }
 }

@@ -5,7 +5,7 @@ export const AuthLayout = () => {
   return (
     <>
       <div className='d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20'>
-        <div className='mb-8'>
+        <div className='mb-2'>
           <img
             alt='Logo'
             src={toAbsoluteUrl('/media/logos/tci.png')}

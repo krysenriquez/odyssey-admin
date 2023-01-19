@@ -65,7 +65,7 @@ class DrawerComponent {
     this.options = Object.assign(defaultDrawerOptions, options)
     this.instanceUid = getUniqueIdWithPrefix('drawer')
     this.overlayElement = null
-    this.name = this.element.getAttribute('data-kt-drawer-name') || ''
+    this.name = this.element.getAttribute('data-drawer-name') || ''
     this.shown = false
     this.toggleElement = null
     // Event Handlers
@@ -104,7 +104,7 @@ class DrawerComponent {
 
     // Reset state
     const hasBaseClass = this.element.classList.contains(`${this.options.baseClass}-on`)
-    const bodyCanvasAttr = String(document.body.getAttribute(`data-kt-drawer-${this.name}-`))
+    const bodyCanvasAttr = String(document.body.getAttribute(`data-drawer-${this.name}-`))
 
     if (hasBaseClass === true && bodyCanvasAttr === 'on') {
       this.shown = true
@@ -128,7 +128,7 @@ class DrawerComponent {
   }
 
   _getOption = (name) => {
-    const attr = this.element.getAttribute(`data-kt-drawer-${name}`)
+    const attr = this.element.getAttribute(`data-drawer-${name}`)
     if (attr) {
       let value = getAttributeValueByBreakpoint(attr)
       if (value !== null && String(value) === 'true') {
@@ -172,8 +172,8 @@ class DrawerComponent {
 
     this.shown = false
     this._deleteOverlay()
-    document.body.removeAttribute(`data-kt-drawer-${this.name}`)
-    document.body.removeAttribute(`data-kt-drawer`)
+    document.body.removeAttribute(`data-drawer-${this.name}`)
+    document.body.removeAttribute(`data-drawer`)
     this.element.classList.remove(`${this.options.baseClass}-on`)
     if (this.toggleElement != null) {
       this.toggleElement.classList.remove('active')
@@ -189,8 +189,8 @@ class DrawerComponent {
 
     this.shown = true
     this._createOverlay()
-    document.body.setAttribute(`data-kt-drawer-${this.name}`, 'on')
-    document.body.setAttribute('data-kt-drawer', 'on')
+    document.body.setAttribute(`data-drawer-${this.name}`, 'on')
+    document.body.setAttribute('data-drawer', 'on')
     this.element.classList.add(`${this.options.baseClass}-on`)
     if (this.toggleElement !== null) {
       this.toggleElement.classList.add('active')
@@ -322,9 +322,9 @@ class DrawerComponent {
   // Dismiss instances
   static handleDismiss = () => {
     // External drawer toggle handler
-    DOMEventHandlerUtil.on(document.body, '[data-kt-drawer-dismiss="true"]', 'click', () => {
+    DOMEventHandlerUtil.on(document.body, '[data-drawer-dismiss="true"]', 'click', () => {
       /* @ts-ignore */
-      const element = this.closest('[data-kt-drawer="true"]')
+      const element = this.closest('[data-drawer="true"]')
       if (element) {
         const drawer = DrawerComponent.getInstance(element)
         if (drawer && drawer.isShown()) {
@@ -343,7 +343,7 @@ class DrawerComponent {
         timer,
         () => {
           // Locate and update Drawer instances on window resize
-          const elements = document.body.querySelectorAll('[data-kt-drawer="true"]')
+          const elements = document.body.querySelectorAll('[data-drawer="true"]')
           elements.forEach((el) => {
             const item = el
             const instance = DrawerComponent.getInstance(item.id)
@@ -359,13 +359,13 @@ class DrawerComponent {
   }
 
   static bootstrap = () => {
-    DrawerComponent.createInstances('[data-kt-drawer="true"]')
+    DrawerComponent.createInstances('[data-drawer="true"]')
     DrawerComponent.initGlobalHandlers()
     DrawerComponent.handleDismiss()
   }
 
   static reinitialization = () => {
-    DrawerComponent.createInstances('[data-kt-drawer="true"]')
+    DrawerComponent.createInstances('[data-drawer="true"]')
     DrawerComponent.hideAll()
     DrawerComponent.updateAll()
     DrawerComponent.handleDismiss()
